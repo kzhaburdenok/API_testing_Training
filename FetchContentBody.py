@@ -18,10 +18,7 @@ pages = json_response['total_pages']
 assert pages == 2, f"Qty of pages is {pages}"
 
 qtyOfData = len(json_response['data'])
-#print("qty is ", qtyOfData)
-
 firstName = jsonpath.jsonpath(json_response, 'data[0].first_name')
-#print((firstName[0]))
 
 for i in range(qtyOfData):
     firstName = jsonpath.jsonpath(json_response, 'data['+str(i)+'].first_name')
